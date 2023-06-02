@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import type { NextPage } from 'next';
+import NFTImage from '../components/NFTImage';
 // 接続中のネットワークを取得するため useNetwork を新たにインポートします。
 import {
   ConnectWallet,
@@ -235,6 +236,7 @@ const Home: NextPage = () => {
           <h1 className={styles.title}>🍪DAO Member Page</h1>
           <p>Congratulations on being a member</p>
           <div>
+            <NFTImage />
             <div>
               <h2>■ Member List</h2>
               <table className="card">
