@@ -19,10 +19,18 @@ export default function NftImage() {
   const { contract } = useContract(editionDropAddress);
   const { data, isLoading, error } = useOwnedNFTs(contract, address);
 
-  // const imageUlr = data[0].metadata.image
   if (data) {
     console.log('data', data[0]?.metadata?.image);
     const ImageUrl = data[0]?.metadata?.image;
-    return <Image src={ImageUrl} alt="NFT Image" width={200} height={200} />;
+    return (
+      <Image
+        src={ImageUrl ? ImageUrl : ''}
+        alt="NFT Image"
+        width={200}
+        height={200}
+      />
+    );
+  } else {
+    return <></>;
   }
 }
